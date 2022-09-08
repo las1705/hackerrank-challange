@@ -1,0 +1,31 @@
+def sockMerchant(n, ar):
+    arr = ar
+    art = []
+    ci = -1
+    idn = True
+    fl = 0
+    for i in arr:
+        ci += 1
+
+    for i in range(ci+1):
+        if i == 0:
+            art.append(arr[0])
+        if i != 0:
+            idn = True
+            for k in range(i):
+                if arr[i] == arr[k]:
+                    idn = False
+            if idn == True:
+                art.append(arr[i])
+                
+    for i in art:
+        tc = 0
+        for k in arr:
+            if i == k:
+                tc += 1
+        if tc%2 == 1:
+            tc -= 1
+        tc /= 2
+        fl += tc    
+        
+    return int(fl)
